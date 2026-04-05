@@ -31,6 +31,21 @@ jobs:
           channel: 'stable'
           cache: true
 
+      - name: Install proot binary dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y binutils zstd
+
+      - name: Fetch PRoot binaries from Termux
+        run: bash scripts/fetch-proot-binaries.sh
+
+      - name: Verify jniLibs
+        run: |
+          echo "=== jniLibs contents ==="
+          find flutter_app/android/app/src/main/jniLibs -type f -name "*.so" -exec ls -la {} \;
+          echo "=== Total files ==="
+          find flutter_app/android/app/src/main/jniLibs -type f -name "*.so" | wc -l
+
       - name: Get dependencies
         run: cd flutter_app && flutter pub get
 
