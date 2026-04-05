@@ -1,0 +1,45 @@
+# Flutter/Dart
+.dart_tool/
+.packages
+build/
+flutter_app/.dart_tool/
+flutter_app/build/
+flutter_app/.packages
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+local.properties
+.gradle/
+flutter_app/android/.gradle/
+flutter_app/android/local.properties
+flutter_app/android/app/build/
+flutter_app/android/build/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Signing
+*.jks
+*.keystore
+key.properties
+
+# Environment
+.env
+.env.*
+
+# Misc
+*.log
