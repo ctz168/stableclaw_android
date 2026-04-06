@@ -233,9 +233,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   subtitle: const Text('Reinstall or repair the environment'),
                   leading: const Icon(Icons.build),
                   trailing: const Icon(Icons.chevron_right),
-                  onTap: () => Navigator.of(context).pushReplacement(
+                  onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => const SetupWizardScreen(),
+                      builder: (_) => const SetupWizardScreen(isReinstallMode: true),
                     ),
                   ),
                 ),
