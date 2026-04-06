@@ -259,9 +259,12 @@ class BootstrapService {
         progress: 0.0,
         message: 'Installing StableClaw (this may take a few minutes)...',
       ));
-      // Install stableclaw — fork/exec works now with our Termux-matching proot.
+      // Install stableclaw from the pre-built "built" branch on GitHub.
+      // The npm registry package may be missing dist/ (build output);
+      // the #built branch includes compiled dist/entry.js so no local
+      // build step is needed inside proot.
       await NativeBridge.runInProot(
-        '$nodeRun $npmCli install -g stableclaw',
+        '$nodeRun $npmCli install -g github:ctz168/stableclaw#built',
         timeout: 1800,
       );
 
